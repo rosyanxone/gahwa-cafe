@@ -1,5 +1,22 @@
 <x-admin-layout>
     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+        <!-- Breadcrumb Start -->
+        <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="text-title-md2 font-bold text-black dark:text-white">
+                Chart
+            </h2>
+
+            <nav>
+                <ol class="flex items-center gap-2">
+                    <li>
+                        <a class="font-medium" href="index.html">Dashboard /</a>
+                    </li>
+                    <li class="font-medium text-primary">Chart</li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Breadcrumb End -->
+
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
             <!-- Card Item Start -->
             <div

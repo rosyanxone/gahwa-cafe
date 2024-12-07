@@ -28,9 +28,8 @@
                 <ul class="mb-6 flex flex-col gap-1.5">
                     <!-- Menu Item Dashboard -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ route('dashboard') }}" @click="selected = (selected === 'Dashboard' ? '':'Dashboard')"
-                            :class="{ 'bg-graydark dark:bg-meta-4 pointer-events-none': (selected === 'Dashboard') }">
+                        <a class="{{ request()->segment(1) === 'dashboard' ? 'bg-graydark dark:bg-meta-4 pointer-events-none' : '' }} group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                            href="{{ route('dashboard') }}">
                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -54,11 +53,10 @@
 
                     <!-- Menu Item Pertanyaan -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ route('question.index') }}" @click="selected = (selected === 'Pertanyaan' ? '':'Pertanyaan')"
-                            :class="{ 'bg-graydark dark:bg-meta-4 pointer-events-none': (selected === 'Pertanyaan') }">
-                            <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a class="{{ request()->segment(1) === 'question' ? 'bg-graydark dark:bg-meta-4 pointer-events-none' : '' }} group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                            href="{{ route('question.index') }}">
+                            <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9756)">
                                     <path
                                         d="M15.7501 0.55835H2.2501C1.29385 0.55835 0.506348 1.34585 0.506348 2.3021V15.8021C0.506348 16.7584 1.29385 17.574 2.27822 17.574H15.7782C16.7345 17.574 17.5501 16.7865 17.5501 15.8021V2.3021C17.522 1.34585 16.7063 0.55835 15.7501 0.55835ZM6.69385 10.599V6.4646H11.3063V10.5709H6.69385V10.599ZM11.3063 11.8646V16.3083H6.69385V11.8646H11.3063ZM1.77197 6.4646H5.45635V10.5709H1.77197V6.4646ZM12.572 6.4646H16.2563V10.5709H12.572V6.4646ZM2.2501 1.82397H15.7501C16.0313 1.82397 16.2563 2.04897 16.2563 2.33022V5.2271H1.77197V2.3021C1.77197 2.02085 1.96885 1.82397 2.2501 1.82397ZM1.77197 15.8021V11.8646H5.45635V16.3083H2.2501C1.96885 16.3083 1.77197 16.0834 1.77197 15.8021ZM15.7501 16.3083H12.572V11.8646H16.2563V15.8021C16.2563 16.0834 16.0313 16.3083 15.7501 16.3083Z"
@@ -79,9 +77,8 @@
 
                     <!-- Menu Item Responden -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ route('respondent.index') }}" @click="selected = (selected === 'Responden' ? '':'Responden')"
-                            :class="{ 'bg-graydark dark:bg-meta-4 pointer-events-none': (selected === 'Responden') }">
+                        <a class="{{ request()->segment(1) === 'respondent' ? 'bg-graydark dark:bg-meta-4 pointer-events-none' : '' }} group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                            href="{{ route('respondent.index') }}">
                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -108,9 +105,8 @@
 
                     <!-- Menu Item Kritik -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ route('criticism-suggestion.index') }}" @click="selected = (selected === 'KritikSaran' ? '':'KritikSaran')"
-                            :class="{ 'bg-graydark dark:bg-meta-4 pointer-events-none': (selected === 'KritikSaran') }">
+                        <a class="{{ request()->segment(1) === 'kritiksaran' ? 'bg-graydark dark:bg-meta-4 pointer-events-none' : '' }} group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                            href="{{ route('criticism-suggestion.index') }}">
                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -126,8 +122,7 @@
                     <!-- Menu Item Calendar -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="calendar.html" @click="selected = (selected === 'Calendar' ? '':'Calendar')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Calendar') && (page === 'calendar') }">
+                            href="calendar.html">
                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -143,9 +138,7 @@
                     <!-- Menu Item Profile -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="profile.html" @click="selected = (selected === 'Profile' ? '':'Profile')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Profile') && (page === 'profile') }"
-                            :class="page === 'profile' && 'bg-graydark'">
+                            href="profile.html" :class="page === 'profile' && 'bg-graydark'">
                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -220,8 +213,7 @@
                     <!-- Menu Item Tables -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="tables.html" @click="selected = (selected === 'Tables' ? '':'Tables')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Tables') && (page === 'tables') }">
+                            href="tables.html">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9756)">
@@ -245,9 +237,7 @@
                     <!-- Menu Item Settings -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="settings.html" @click="selected = (selected === 'Settings' ? '':'Settings')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Settings') && (page === 'settings') }"
-                            :class="page === 'settings' && 'bg-graydark'">
+                            href="settings.html" :class="page === 'settings' && 'bg-graydark'">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9763)">
@@ -281,8 +271,7 @@
                     <!-- Menu Item Chart -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="chart.html" @click="selected = (selected === 'Chart' ? '':'Chart')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Chart') && (page === 'Chart') }">
+                            href="chart.html">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9801)">
@@ -309,9 +298,7 @@
                     <!-- Menu Item Ui Elements -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="#" @click.prevent="selected = (selected === 'UiElements' ? '':'UiElements')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'UiElements') || (page === 'alerts' ||
-                                    page === 'buttons') }">
+                            href="#">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9807)">
@@ -335,9 +322,9 @@
 
                             UI Elements
 
-                            <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
-                                :class="{ 'rotate-180': (selected === 'UiElements') }" width="20" height="20"
-                                viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current" width="20"
+                                height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M4.41107 6.9107C4.73651 6.58527 5.26414 6.58527 5.58958 6.9107L10.0003 11.3214L14.4111 6.91071C14.7365 6.58527 15.2641 6.58527 15.5896 6.91071C15.915 7.23614 15.915 7.76378 15.5896 8.08922L10.5896 13.0892C10.2641 13.4147 9.73651 13.4147 9.41107 13.0892L4.41107 8.08922C4.08563 7.76378 4.08563 7.23614 4.41107 6.9107Z"
                                     fill="" />
@@ -345,8 +332,7 @@
                         </a>
 
                         <!-- Dropdown Menu Start -->
-                        <div class="translate transform overflow-hidden"
-                            :class="(selected === 'UiElements') ? 'block' : 'hidden'">
+                        <div class="translate transform overflow-hidden">
                             <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
@@ -366,9 +352,7 @@
                     <!-- Menu Item Auth Pages -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="#" @click.prevent="selected = (selected === 'AuthPages' ? '':'AuthPages')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'AuthPages') || (page === 'register' ||
-                                    page === 'login') }">
+                            href="#">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_130_9814)">
@@ -389,9 +373,9 @@
 
                             Authentication
 
-                            <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
-                                :class="{ 'rotate-180': (selected === 'AuthPages') }" width="20" height="20"
-                                viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current" width="20"
+                                height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M4.41107 6.9107C4.73651 6.58527 5.26414 6.58527 5.58958 6.9107L10.0003 11.3214L14.4111 6.91071C14.7365 6.58527 15.2641 6.58527 15.5896 6.91071C15.915 7.23614 15.915 7.76378 15.5896 8.08922L10.5896 13.0892C10.2641 13.4147 9.73651 13.4147 9.41107 13.0892L4.41107 8.08922C4.08563 7.76378 4.08563 7.23614 4.41107 6.9107Z"
                                     fill="" />
@@ -399,8 +383,7 @@
                         </a>
 
                         <!-- Dropdown Menu Start -->
-                        <div class="translate transform overflow-hidden"
-                            :class="(selected === 'AuthPages') ? 'block' : 'hidden'">
+                        <div class="translate transform overflow-hidden">
                             <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
