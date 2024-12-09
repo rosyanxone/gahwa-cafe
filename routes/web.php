@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/questioner', function () {
+    return view('pages.guest.questioner');
+})->name('questioner');
+
 Route::get('/dashboard', function () {
     return view('pages.admin.dashboard');
 })->name('dashboard');
