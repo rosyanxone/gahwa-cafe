@@ -11,6 +11,7 @@ import chart01 from "./../../public/js/components/chart-01";
 import chart02 from "./../../public/js/components/chart-02";
 import chart03 from "./../../public/js/components/chart-03";
 import chart04 from "./../../public/js/components/chart-04";
+import chartLikert from "./../../public/js/components/chart-likert";
 
 Alpine.plugin(persist);
 window.Alpine = Alpine;
@@ -56,4 +57,5 @@ document.addEventListener("DOMContentLoaded", () => {
     chart02();
     chart03();
     chart04();
+    chartLikert();
 });

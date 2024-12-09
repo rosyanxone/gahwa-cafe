@@ -24,7 +24,7 @@
         <div class="flex flex-col gap-10">
             <div
                 class="space-y-4 rounded-sm border border-stroke bg-white px-5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
-                <a class="inline-flex items-center justify-center bg-primary px-4 py-3 text-center text-sm font-medium text-white hover:bg-opacity-90"
+                <a class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-center text-sm font-medium text-white hover:bg-opacity-90"
                     href="{{ route('question.index') }}" title="Kembali">
                     <svg class="w-2 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
                         <path
@@ -188,7 +188,7 @@
                     href="#">
                     Tambah Pertanyaan
                 </a>
-                <a class="inline-flex w-full items-center justify-center bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+                <a class="inline-flex w-full items-center justify-center rounded-lg bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
                     href="#">
                     Simpan
                 </a>
