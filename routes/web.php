@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,5 +30,11 @@ Route::get('/respondent', function () {
 Route::get('/kritiksaran', function () {
     return view('pages.admin.criticism-suggestion.index');
 })->name('criticism-suggestion.index');
+
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::post('/login/store', 'store')->name('login.store');
+    Route::post('/logout', 'destroy')->name('logout');
+});
 
 require __DIR__ . '/users.php';
