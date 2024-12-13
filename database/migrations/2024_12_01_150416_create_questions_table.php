@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->bigInteger('order');
-            $table->enum('type', ['likert', 'worthy', 'essay']);
+            $table->enum('type', ['likert', 'essay']);
             $table->timestamps();
         });
     }

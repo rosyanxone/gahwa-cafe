@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('respondents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('question_id')->constrained()->onDelete('cascade');
-            $table->foreignId('respondent_id')->constrained()->onDelete('cascade');
-            $table->text('body');
+            $table->enum('gender', ['L', 'P']);
+            $table->bigInteger('age');
+            $table->string('cafe');
+            $table->date('visited_at');column: 
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('respondents');
     }
 };
