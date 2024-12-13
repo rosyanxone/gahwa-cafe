@@ -29,3 +29,5 @@ Route::get('/respondent', function () {
 Route::get('/kritiksaran', function () {
     return view('pages.admin.criticism-suggestion.index');
 })->name('criticism-suggestion.index');
+
+require __DIR__ . '/users.php';
