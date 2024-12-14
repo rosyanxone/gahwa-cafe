@@ -31,122 +31,149 @@
                             d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z" />
                     </svg>
                 </a>
-                <div>
-                    <label class="mb-3 flex justify-between text-sm font-medium text-black dark:text-white">
-                        <span class="lg:text-lg">
-                            Pertanyaan ke-1
-                        </span>
-                        <div class="flex items-center gap-2">
-                            <div class="relative z-20 bg-white text-xs dark:bg-form-input" x-data="{ isOptionSelected: false }">
-                                <select
-                                    class="relative z-20 w-18 appearance-none rounded-md border border-stroke bg-transparent p-1 pr-7 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
-                                    :class="isOptionSelected && 'text-black dark:text-white'"
-                                    @change="isOptionSelected = true">
-                                    <option class="text-body" value="">Likert</option>
-                                    <option class="text-body" value="">Essay</option>
-                                    <option class="text-body" value="">Skor</option>
-                                </select>
-                                <span class="absolute right-1 top-1/2 z-10 -translate-y-1/2">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g opacity="0.8">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                fill="#637381"></path>
-                                        </g>
-                                    </svg>
+                <form class="space-y-5" id="questions" action="{{ route('question.store') }}" method="POST">
+                    @csrf
+                    <input id="questions-total" name="questionsTotal" type="number" hidden>
+                    @forelse ($questions as $question)
+                        <div id="question-{{ $loop->iteration }}">
+                            <label class="mb-3 flex justify-between text-sm font-medium text-black dark:text-white">
+                                <span class="lg:text-lg">
+                                    Pertanyaan ke-{{ $question->order }}
                                 </span>
-                            </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="relative z-20 bg-white text-xs dark:bg-form-input">
+                                        <select
+                                            class="relative z-20 w-18 appearance-none rounded-md border border-stroke bg-transparent p-1 pr-7 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                                            name="types[]">
+                                            <option class="text-body" value="likert" @selected($question->type === 'likert')>Likert
+                                            </option>
+                                            <option class="text-body" value="essay" @selected($question->type === 'essay')>Essay
+                                            </option>
+                                        </select>
+                                        <span class="absolute right-1 top-1/2 z-10 -translate-y-1/2">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g opacity="0.8">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                        fill="#637381"></path>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
 
-                            <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
-                                href="#">
-                                <svg class="w-3 fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 512 512">
-                                    <path
-                                        d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
-                                </svg>
-                            </a>
-                            <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
-                                href="#">
-                                <svg class="w-3 fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 448 512">
-                                    <path
-                                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                                </svg>
-                            </a>
+                                    <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
+                                        href="{{ route('question.reorder', ['question' => $question->id, 'move' => 'up']) }}">
+                                        <svg class="w-3 fill-primary group-hover:fill-white"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+                                        </svg>
+                                    </a>
+                                    <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
+                                        href="{{ route('question.reorder', ['question' => $question->id, 'move' => 'down']) }}">
+                                        <svg class="w-3 fill-primary group-hover:fill-white"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </label>
+                            <div class="flex">
+                                <input
+                                    class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                    name="questions[]" type="text" value="{{ $question->title }}"
+                                    placeholder="Default Input" />
+                            </div>
                         </div>
-                    </label>
-                    <div class="flex">
-                        <input
-                            class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                            type="text" placeholder="Default Input" />
-                    </div>
-                </div>
-                <div>
-                    <label class="mb-3 flex justify-between text-sm font-medium text-black dark:text-white">
-                        <span class="lg:text-lg">
-                            Pertanyaan ke-2
-                        </span>
-                        <div class="flex items-center gap-2">
-                            <div class="relative z-20 bg-white text-xs dark:bg-form-input" x-data="{ isOptionSelected: false }">
-                                <select
-                                    class="relative z-20 w-18 appearance-none rounded-md border border-stroke bg-transparent p-1 pr-7 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
-                                    :class="isOptionSelected && 'text-black dark:text-white'"
-                                    @change="isOptionSelected = true">
-                                    <option class="text-body" value="">Likert</option>
-                                    <option class="text-body" value="">Essay</option>
-                                    <option class="text-body" value="">Skor</option>
-                                </select>
-                                <span class="absolute right-1 top-1/2 z-10 -translate-y-1/2">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g opacity="0.8">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                fill="#637381"></path>
-                                        </g>
-                                    </svg>
+                    @empty
+                        <div id="question-1">
+                            <label class="mb-3 flex justify-between text-sm font-medium text-black dark:text-white">
+                                <span class="lg:text-lg">
+                                    Pertanyaan ke-1
                                 </span>
-                            </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="relative z-20 bg-white text-xs dark:bg-form-input">
+                                        <select
+                                            class="relative z-20 w-18 appearance-none rounded-md border border-stroke bg-transparent p-1 pr-7 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                                            name="types[]">
+                                            <option class="text-body" value="likert">Likert</option>
+                                            <option class="text-body" value="essay">Essay</option>
+                                        </select>
+                                        <span class="absolute right-1 top-1/2 z-10 -translate-y-1/2">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g opacity="0.8">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                        fill="#637381"></path>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
 
-                            <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
-                                href="#">
-                                <svg class="w-3 fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 512 512">
-                                    <path
-                                        d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
-                                </svg>
-                            </a>
-                            <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
-                                href="#">
-                                <svg class="w-3 fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 448 512">
-                                    <path
-                                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                                </svg>
-                            </a>
+                                    <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
+                                        href="#">
+                                        <svg class="w-3 fill-primary group-hover:fill-white"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+                                        </svg>
+                                    </a>
+                                    <a class="group inline-flex items-center justify-center rounded-md border border-primary p-1 text-center font-medium text-primary hover:bg-primary hover:bg-opacity-90"
+                                        href="#">
+                                        <svg class="w-3 fill-primary group-hover:fill-white"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </label>
+                            <div class="flex">
+                                <input
+                                    class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                    name="questions[]" type="text" placeholder="Default Input" />
+                            </div>
                         </div>
-                    </label>
-                    <div class="flex">
-                        <input
-                            class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                            type="text" placeholder="Default Input" />
-                    </div>
-                </div>
-                <div>
+                    @endforelse
+                </form>
+                <button
+                    class="inline-flex w-full items-center justify-center rounded-full border border-primary px-10 py-2 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
+                    type="button" onclick="addQuestion()">
+                    Tambah Pertanyaan
+                </button>
+                <button
+                    class="inline-flex w-full items-center justify-center rounded-lg bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+                    type="submit" onclick="submitQuestions()">
+                    Simpan
+                </button>
+            </div>
+        </div>
+        <!-- Create Form End -->
+    </div>
+
+    @push('scripts')
+        <script>
+            let questionsTotal = {{ $questionsTotal }};
+
+            function addQuestion() {
+                questionsTotal += 1;
+
+                const questionsContainer = document.getElementById("questions");
+                const questionItem = `
                     <label class="mb-3 flex justify-between text-sm font-medium text-black dark:text-white">
                         <span class="lg:text-lg">
-                            Pertanyaan ke-3
+                            Pertanyaan ke-${questionsTotal}
                         </span>
                         <div class="flex items-center gap-2">
-                            <div class="relative z-20 bg-white text-xs dark:bg-form-input" x-data="{ isOptionSelected: false }">
+                            <div class="relative z-20 bg-white text-xs dark:bg-form-input">
                                 <select
                                     class="relative z-20 w-18 appearance-none rounded-md border border-stroke bg-transparent p-1 pr-7 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
-                                    :class="isOptionSelected && 'text-black dark:text-white'"
-                                    @change="isOptionSelected = true">
-                                    <option class="text-body" value="">Likert</option>
-                                    <option class="text-body" value="">Essay</option>
-                                    <option class="text-body" value="">Skor</option>
+                                    name="types[]">
+                                    <option class="text-body" value="likert">Likert</option>
+                                    <option class="text-body" value="essay">Essay</option>
                                 </select>
                                 <span class="absolute right-1 top-1/2 z-10 -translate-y-1/2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -181,19 +208,22 @@
                     <div class="flex">
                         <input
                             class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                            type="text" placeholder="Default Input" />
+                            name="questions[]" type="text" placeholder="Default Input" />
                     </div>
-                </div>
-                <a class="inline-flex w-full items-center justify-center rounded-full border border-primary px-10 py-2 text-center font-medium text-primary hover:bg-opacity-90 lg:px-8 xl:px-10"
-                    href="#">
-                    Tambah Pertanyaan
-                </a>
-                <a class="inline-flex w-full items-center justify-center rounded-lg bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
-                    href="#">
-                    Simpan
-                </a>
-            </div>
-        </div>
-        <!-- Create Form End -->
-    </div>
+                `;
+                const questionNode = document.createElement("div");
+
+                questionNode.setAttribute("id", `question-${questionsTotal}`);
+
+                questionNode.innerHTML = questionItem;
+                questionsContainer.appendChild(questionNode);
+            }
+
+            function submitQuestions() {
+                const input = document.getElementById("questions-total");
+                input.value = questionsTotal;
+                document.getElementById('questions').submit();
+            }
+        </script>
+    @endpush
 </x-admin-layout>

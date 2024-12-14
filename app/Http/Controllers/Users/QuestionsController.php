@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
+use App\Http\Controllers\Controller;
+use App\Models\Question;
 use App\Models\Questions;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,11 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::orderBy('order')->get();
+
+        return view('pages.admin.question.index', [
+            'questions' => $questions,
+        ]);
     }
 
     /**
@@ -20,7 +26,12 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        //
+        $questions = Question::orderBy('order')->get();
+
+        return view('pages.admin.question.create', [
+            'questions' => $questions,
+            'questionsTotal' => ($questions->count() == 0) ? 1 : $questions->count(),
+        ]);
     }
 
     /**
@@ -28,13 +39,56 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        for ($i = 0; $i < $request->questionsTotal; $i++) {
+            $question = Question::where('order', $i + 1)->first();
+
+            if ($question) {
+                $question->update([
+                    'title' => $request->questions[$i] ?? '',
+                    'order' => $i + 1,
+                    'type' => $request->types[$i],
+                ]);
+            } else {
+                Question::create([
+                    'title' => $request->questions[$i] ?? '',
+                    'order' => $i + 1,
+                    'type' => $request->types[$i],
+                ]);
+            }
+        }
+
+        return redirect()->route('question.create');
+    }
+
+    public function reorder(Question $question)
+    {
+        if (request()->get('move') == 'up') {
+            $wantedOrder = $question->order - 1;
+        } else {
+            $wantedOrder = $question->order + 1;
+        }
+
+        $reorderedQuestion = Question::where('order', $wantedOrder)->first();
+
+        if ($reorderedQuestion) {
+            $reorderedQuestion->update([
+                'order' => $question->order,
+            ]);
+        } else {
+            return redirect()->route('question.create');
+        }
+
+        $question->update([
+            'order' => $wantedOrder,
+        ]);
+
+        return redirect()->route('question.create');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Questions $questions)
+    public function show(Question $question)
     {
         //
     }
@@ -42,7 +96,7 @@ class QuestionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Questions $questions)
+    public function edit(Question $question)
     {
         //
     }
@@ -50,7 +104,7 @@ class QuestionsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Questions $questions)
+    public function update(Request $request, Question $question)
     {
         //
     }
@@ -58,8 +112,18 @@ class QuestionsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Questions $questions)
+    public function destroy(Question $question)
     {
-        //
+        $question->delete();
+
+        $questions = Question::orderBy('order')->get();
+
+        foreach ($questions as $i => $question) {
+            $question->update([
+                'order' => $i + 1,
+            ]);
+        }
+
+        return redirect()->route('question.index');
     }
 }

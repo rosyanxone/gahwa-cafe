@@ -41,33 +41,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="w-5 p-2.5 xl:p-5">1</td>
-                            <td class="p-2.5 xl:p-5">Siapa nama Anda</td>
-                            <td class="p-2.5 xl:p-5">Likert</td>
-                            <td class="p-2.5 xl:p-5">
-                                <a href="">Edit</a>
-                                <a href="">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="w-5 p-2.5 xl:p-5">2</td>
-                            <td class="p-2.5 xl:p-5">Siapa nama sampean</td>
-                            <td class="p-2.5 xl:p-5">Skor</td>
-                            <td class="p-2.5 xl:p-5">
-                                <a href="">Edit</a>
-                                <a href="">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="w-5 p-2.5 xl:p-5">3</td>
-                            <td class="p-2.5 xl:p-5">Siapa nama kamu</td>
-                            <td class="p-2.5 xl:p-5">Essay</td>
-                            <td class="p-2.5 xl:p-5">
-                                <a href="">Edit</a>
-                                <a href="">Hapus</a>
-                            </td>
-                        </tr>
+                        @foreach ($questions as $question)
+                            <tr>
+                                <td class="w-5 p-2.5 xl:p-5">{{ $loop->iteration }}</td>
+                                <td class="p-2.5 xl:p-5">{{ $question->title }}</td>
+                                <td class="p-2.5 xl:p-5">{{ $question->type }}</td>
+                                <td class="p-2.5 xl:p-5">
+                                    <a href="{{ route('question.destroy', ['question' => $question->id]) }}">Hapus</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
