@@ -96,6 +96,8 @@
     <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('js/mail-script.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+
+    @yield('scripts')
 </body>
 
 </html>

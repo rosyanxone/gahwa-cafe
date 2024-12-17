@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\Question;
-use App\Models\Questions;
 use Illuminate\Http\Request;
 
-class QuestionsController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.

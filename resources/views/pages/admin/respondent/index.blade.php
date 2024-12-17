@@ -1,4 +1,8 @@
 <x-admin-layout>
+    @push('extend-head')
+        <script src="{{ asset('js/apexcharts.min.js') }}"></script>
+    @endpush
+
     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
         <!-- Breadcrumb Start -->
         <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -43,7 +47,7 @@
                         </div>
 
                         <div>
-                            <div class="-mb-9 -ml-5" id="chartLikert"></div>
+                            <div class="-mb-9 -ml-5" id="chartLikert-1"></div>
                         </div>
                     </li>
 
@@ -60,18 +64,39 @@
                         <div class="">
                             <div class="max-h-70 overflow-y-auto" id="essayAnswer">
                                 <ul class="text-sm lg:text-lg">
-                                    <li class="p-3 border border-stroke">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam fugit dolorum accusantium temporibus eum ducimus maxime sit id ipsa amet illo suscipit rerum eos perspiciatis at modi aspernatur autem, voluptatum nostrum fugiat. Magni vitae ipsum amet voluptatem magnam, iure, eos nam, eligendi blanditiis debitis ducimus quod soluta praesentium labore quia. Explicabo expedita placeat soluta corrupti quisquam iste possimus ex neque sed maxime, vitae harum eum. Minus eius explicabo pariatur, placeat esse laborum velit, sint asperiores unde veniam consectetur nisi harum soluta sequi ut obcaecati repellat expedita quis recusandae amet exercitationem voluptatibus mollitia? Corrupti, consequatur? Labore culpa quae cumque voluptatibus facilis?</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
-                                    <li class="p-3 border border-stroke">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Quisquam fugit dolorum accusantium temporibus eum ducimus
+                                        maxime sit id ipsa amet illo suscipit rerum eos perspiciatis at modi aspernatur
+                                        autem, voluptatum nostrum fugiat. Magni vitae ipsum amet voluptatem magnam,
+                                        iure, eos nam, eligendi blanditiis debitis ducimus quod soluta praesentium
+                                        labore quia. Explicabo expedita placeat soluta corrupti quisquam iste possimus
+                                        ex neque sed maxime, vitae harum eum. Minus eius explicabo pariatur, placeat
+                                        esse laborum velit, sint asperiores unde veniam consectetur nisi harum soluta
+                                        sequi ut obcaecati repellat expedita quis recusandae amet exercitationem
+                                        voluptatibus mollitia? Corrupti, consequatur? Labore culpa quae cumque
+                                        voluptatibus facilis?</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
+                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Inventore, omnis!</li>
                                 </ul>
                             </div>
                         </div>
@@ -84,17 +109,9 @@
     </div>
 
     @push('scripts')
+        <script src="{{ asset('js/main/chart-likert.js') }}"></script>
         <script>
-            new DataTable('#questions', {
-                responsive: true,
-                rowReorder: {
-                    selector: 'td:nth-child(2)'
-                },
-                columnDefs: [{
-                    targets: 0,
-                    className: 'dt-body-left dt-head-left'
-                }]
-            });
+            chartLikert('#chartLikert-1');
         </script>
     @endpush
 </x-admin-layout>

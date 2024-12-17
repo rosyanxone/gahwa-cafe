@@ -9,4 +9,6 @@ class Respondent extends Model
 {
     /** @use HasFactory<\Database\Factories\RespondentFactory> */
     use HasFactory;
+
+    protected $guarded = [];
 }
