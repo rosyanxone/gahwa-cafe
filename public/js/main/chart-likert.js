@@ -1,9 +1,9 @@
-function chartLikert (elementId) {
-    const chartTwoOptions = {
+function chartLikert (elementId, yValue) {
+    const chartOptions = {
         series: [
             {
-                name: "Sales",
-                data: [44, 55, 41, 67, 22],
+                name: "Total",
+                data: yValue,
             },
         ],
         colors: ["#3056D3"],
@@ -67,10 +67,10 @@ function chartLikert (elementId) {
     const chartSelector = document.querySelectorAll(elementId);
 
     if (chartSelector.length) {
-        const chartTwo = new ApexCharts(
+        const chart = new ApexCharts(
             document.querySelector(elementId),
-            chartTwoOptions
+            chartOptions
         );
-        chartTwo.render();
+        chart.render();
     }
 };
