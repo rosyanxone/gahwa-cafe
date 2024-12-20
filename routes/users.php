@@ -25,6 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::controller(EmployeeController::class)->name('employee.')->prefix('employee')->group(function () {
             Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{user}', 'edit')->name('edit');
+            Route::post('/update/{user}', 'update')->name('update');
+            Route::get('/destroy/{user}', 'destroy')->name('destroy');
         });
     });
 });

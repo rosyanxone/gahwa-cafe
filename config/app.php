@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'id',
+    'locale' => 'en',
 
     'fallback_locale' => 'id',
 

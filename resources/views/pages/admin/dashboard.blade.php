@@ -43,7 +43,7 @@
                                 <span class="block h-2.5 w-full max-w-2.5 rounded-full bg-primary"></span>
                             </span>
                             <div class="w-full">
-                                <p class="font-semibold text-primary">Total Respondent</p>
+                                <p class="font-semibold text-primary">Total Responden</p>
                                 <p class="text-sm font-medium">{{ $totalRespondent }}</p>
                             </div>
                         </div>
