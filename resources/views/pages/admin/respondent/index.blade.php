@@ -24,83 +24,116 @@
         <!-- ====== Table Section Start -->
         <div class="flex flex-col gap-10">
             <div
-                class="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+                class="rounded-sm border border-stroke bg-white px-5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
                 <div class="mb-6 flex items-center justify-between">
                     <h4 class="text-xl font-bold text-black dark:text-white">
                         Tabel Responden
                     </h4>
-                    <a class="inline-flex items-center justify-center rounded-md bg-primary p-2 text-center text-sm font-medium text-white hover:bg-opacity-90 lg:p-4"
-                        href="{{ route('question.create') }}">
-                        Tambah Responden
-                    </a>
+                </div>
+
+                <div class="w-full mb-6 overflow-auto">
+                    <!-- Card Item Start -->
+                    <div class="flex w-full grid-cols-12 gap-3 lg:grid lg:gap-6">
+                        <div
+                            class="col-span-3 flex h-64 flex-col justify-between rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+                            <div class="w-40 justify-between gap-4 sm:flex lg:w-auto">
+                                <h4 class="text-xl font-bold text-black dark:text-white">
+                                    Nilai IKM
+                                </h4>
+                            </div>
+                            <div class="mb-5">
+                                <div class="flex flex-col items-center justify-center gap-5">
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">76.50</h1>
+                                    <div class="w-full text-center">
+                                        <hr class="mb-3 h-0.5 bg-black-2">
+                                        <span class="text-xl text-black-2 dark:text-white">B (Baik)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Item End -->
+
+                        <!-- Card Item Start -->
+                        <div
+                            class="col-span-3 flex flex-col justify-between rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+                            <div class="mb-3 w-40 justify-between gap-4 sm:flex lg:w-auto">
+                                <h4 class="text-xl font-bold text-black dark:text-white">
+                                    Jumlah
+                                </h4>
+                            </div>
+                            <div class="mt-8">
+                                <div class="flex flex-col items-center justify-center gap-5">
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">64 orang</h1>
+                                    <hr class="mb-10 h-0.5 w-full bg-black-2">
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                        <!-- Card Item End -->
+
+                        <!-- Card Item Start -->
+                        <div
+                            class="col-span-3 flex flex-col justify-between rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+                            <div class="mb-3 w-40 justify-between gap-4 sm:flex lg:w-auto">
+                                <h4 class="text-xl font-bold text-black dark:text-white">
+                                    Laki-laki
+                                </h4>
+                            </div>
+                            <div class="mt-8">
+                                <div class="flex flex-col items-center justify-center gap-5">
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">42 orang</h1>
+                                    <hr class="mb-10 h-0.5 w-full bg-black-2">
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                        <!-- Card Item End -->
+
+                        <!-- Card Item Start -->
+                        <div
+                            class="col-span-3 flex flex-col justify-between rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+                            <div class="mb-3 w-40 justify-between gap-4 sm:flex lg:w-auto">
+                                <h4 class="text-xl font-bold text-black dark:text-white">
+                                    Perempuan
+                                </h4>
+                            </div>
+                            <div class="mt-8">
+                                <div class="flex flex-col items-center justify-center gap-5">
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">22 orang</h1>
+                                    <hr class="mb-10 h-0.5 w-full bg-black-2">
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                        <!-- Card Item End -->
+                    </div>
                 </div>
 
                 <ul class="flex flex-col gap-6">
-                    <li
-                        class="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-                        <div class="mb-4 justify-between gap-4 sm:flex">
-                            <div>
-                                <h4 class="text-xl font-bold text-black dark:text-white">
-                                    Bagaimana pendapat Anda mengenai...?
-                                </h4>
+                    @foreach ($questions as $question)
+                        <li
+                            class="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark lg:col-span-4">
+                            <div class="mb-4 justify-between gap-4 sm:flex">
+                                <div>
+                                    <h4 class="text-xl font-bold text-black dark:text-white">
+                                        {{ $question->title }}
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <div class="-mb-9 -ml-5" id="chartLikert-1"></div>
-                        </div>
-                    </li>
-
-                    <li
-                        class="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-                        <div class="mb-4 justify-between gap-4 sm:flex">
-                            <div>
-                                <h4 class="text-xl font-bold text-black dark:text-white">
-                                    Bagaimana pendapat Anda mengenai...?
-                                </h4>
+                            <div class="">
+                                <div class="max-h-70 overflow-y-auto" id="essayAnswer">
+                                    <ul class="text-sm lg:text-lg">
+                                        @foreach ($question->answer as $answer)
+                                            <li class="border border-stroke p-3">
+                                                {{ $answer->body }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="">
-                            <div class="max-h-70 overflow-y-auto" id="essayAnswer">
-                                <ul class="text-sm lg:text-lg">
-                                    <li class="border border-stroke p-3">Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Quisquam fugit dolorum accusantium temporibus eum ducimus
-                                        maxime sit id ipsa amet illo suscipit rerum eos perspiciatis at modi aspernatur
-                                        autem, voluptatum nostrum fugiat. Magni vitae ipsum amet voluptatem magnam,
-                                        iure, eos nam, eligendi blanditiis debitis ducimus quod soluta praesentium
-                                        labore quia. Explicabo expedita placeat soluta corrupti quisquam iste possimus
-                                        ex neque sed maxime, vitae harum eum. Minus eius explicabo pariatur, placeat
-                                        esse laborum velit, sint asperiores unde veniam consectetur nisi harum soluta
-                                        sequi ut obcaecati repellat expedita quis recusandae amet exercitationem
-                                        voluptatibus mollitia? Corrupti, consequatur? Labore culpa quae cumque
-                                        voluptatibus facilis?</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                    <li class="border border-stroke p-3">Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Inventore, omnis!</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
                 </ul>
 
             </div>
@@ -109,9 +142,5 @@
     </div>
 
     @push('scripts')
-        <script src="{{ asset('js/main/chart-likert.js') }}"></script>
-        <script>
-            chartLikert('#chartLikert-1');
-        </script>
     @endpush
 </x-admin-layout>

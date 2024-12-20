@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Users\DashboardController;
+use App\Http\Controllers\Users\EmployeeController;
 use App\Http\Controllers\Users\QuestionController;
+use App\Http\Controllers\Users\RespondentController;
 
-Route::middleware('auth')->group(function () { 
+Route::middleware('auth')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
     });
@@ -16,5 +18,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/destroy/{question}', 'destroy')->name('destroy');
     });
 
-    Route::middleware(['auth', 'role:admin'])->group(function () { });
- });
+    Route::controller(RespondentController::class)->name('respondent.')->prefix('respondent')->group(function () {
+        Route::get('/', 'index')->name('index');
+    });
+
+    Route::middleware(['auth', 'role:admin'])->group(function () {
+        Route::controller(EmployeeController::class)->name('employee.')->prefix('employee')->group(function () {
+            Route::get('/', 'index')->name('index');
+        });
+    });
+});

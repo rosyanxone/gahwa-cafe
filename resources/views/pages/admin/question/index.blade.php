@@ -47,7 +47,8 @@
                                 <td class="p-2.5 xl:p-5">{{ $question->title }}</td>
                                 <td class="p-2.5 xl:p-5">{{ $question->type }}</td>
                                 <td class="p-2.5 xl:p-5">
-                                    <a href="{{ route('question.destroy', ['question' => $question->id]) }}">Hapus</a>
+                                    <a class="text-red-500 underline hover:no-underline"
+                                        href="{{ route('question.destroy', ['question' => $question->id]) }}">Hapus</a>
                                 </td>
                             </tr>
                         @endforeach

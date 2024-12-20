@@ -28,9 +28,9 @@ Route::get('/respondent', function () {
     return view('pages.admin.respondent.index');
 })->name('respondent.index');
 
-Route::get('/kritiksaran', function () {
-    return view('pages.admin.criticism-suggestion.index');
-})->name('criticism-suggestion.index');
+// Route::get('/kritiksaran', function () {
+//     return view('pages.admin.criticism-suggestion.index');
+// })->name('criticism-suggestion.index');
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');

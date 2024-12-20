@@ -3,24 +3,17 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
-use App\Models\Question;
-use App\Models\Respondent;
 use Illuminate\Http\Request;
 
-class RespondentController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $questions = Question::where('type', 'essay')
-            ->orderBy('order')
-            ->with('answer')
-            ->get();
-
-        return view('pages.admin.respondent.index', [
-            'questions' => $questions,
+        return view('pages.admin.employee.index', [
+            // 'questions' => $questions,
         ]);
     }
 
@@ -43,7 +36,7 @@ class RespondentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Respondent $respondent)
+    public function show(string $id)
     {
         //
     }
@@ -51,7 +44,7 @@ class RespondentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Respondent $respondent)
+    public function edit(string $id)
     {
         //
     }
@@ -59,7 +52,7 @@ class RespondentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Respondent $respondent)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -67,7 +60,7 @@ class RespondentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Respondent $respondent)
+    public function destroy(string $id)
     {
         //
     }
