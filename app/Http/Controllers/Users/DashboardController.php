@@ -38,11 +38,14 @@ class DashboardController extends Controller
 
         $questionCollections = Question::orderBy('order')->where('type', 'likert')->get();
 
+        $respondents = Respondent::orderByDesc('visited_at')->get();
+
         return view('pages.admin.dashboard', [
             'totalRespondent' => $totalRespondent,
             'questions' => $questions,
             'questionsAvg' => $questionsAvg,
             'questionCollections' => $questionCollections,
+            'respondents' => $respondents,
         ]);
     }
 }

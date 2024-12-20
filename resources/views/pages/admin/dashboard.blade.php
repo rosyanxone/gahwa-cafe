@@ -116,7 +116,7 @@
                         <div class="mt-8">
                             <div class="flex flex-col items-center justify-center gap-5">
                                 <h1 class="text-4xl font-medium text-black-2 dark:text-white">64 orang</h1>
-                                <hr class="h-0.5 mb-10 w-full bg-black-2">
+                                <hr class="mb-10 h-0.5 w-full bg-black-2">
                             </div>
                         </div>
                         <div></div>
@@ -134,7 +134,7 @@
                         <div class="mt-8">
                             <div class="flex flex-col items-center justify-center gap-5">
                                 <h1 class="text-4xl font-medium text-black-2 dark:text-white">42 orang</h1>
-                                <hr class="h-0.5 mb-10 w-full bg-black-2">
+                                <hr class="mb-10 h-0.5 w-full bg-black-2">
                             </div>
                         </div>
                         <div></div>
@@ -152,7 +152,7 @@
                         <div class="mt-8">
                             <div class="flex flex-col items-center justify-center gap-5">
                                 <h1 class="text-4xl font-medium text-black-2 dark:text-white">22 orang</h1>
-                                <hr class="h-0.5 mb-10 w-full bg-black-2">
+                                <hr class="mb-10 h-0.5 w-full bg-black-2">
                             </div>
                         </div>
                         <div></div>
@@ -162,142 +162,68 @@
             </div>
 
             <!-- ====== Table One Start -->
-            <div class="col-span-12 xl:col-span-12">
-                @include('partials.table-01')
-            </div>
-            <!-- ====== Table One End -->
+            <div class="col-span-12 lg:col-span-12">
+                <div
+                    class="rounded-sm border border-stroke bg-white px-5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+                    <h4 class="mb-6 text-xl font-bold text-black dark:text-white">
+                        Responden
+                    </h4>
 
-            <!-- ====== Chat Card Start -->
-            <div
-                class="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-                <h4 class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white">
-                    Chats
-                </h4>
-
-                <div>
-                    <a class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-                        href="messages.html">
-                        <div class="relative h-14 w-14 rounded-full">
-                            <img src="{{ asset('./img/user/user-03.png') }}" alt="User" />
-                            <span
-                                class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"></span>
-                        </div>
-
-                        <div class="flex flex-1 items-center justify-between">
-                            <div>
-                                <h5 class="font-medium text-black dark:text-white">
-                                    Devid Heilo
-                                </h5>
-                                <p>
-                                    <span class="text-sm font-medium text-black dark:text-white">Hello, how
-                                        are you?</span>
-                                    <span class="text-xs"> . 12 min</span>
-                                </p>
+                    <div class="flex flex-col">
+                        <div class="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+                            <div class="p-2.5 xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Berkunjung Pada</h5>
                             </div>
-                            <div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
-                                <span class="text-sm font-medium text-white">3</span>
+                            <div class="p-2.5 text-center xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Jenis Kelamin</h5>
+                            </div>
+                            <div class="p-2.5 text-center xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Umur</h5>
+                            </div>
+                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Cafe</h5>
+                            </div>
+                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Aksi</h5>
                             </div>
                         </div>
-                    </a>
-                    <a class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-                        href="messages.html">
-                        <div class="relative h-14 w-14 rounded-full">
-                            <img src="{{ asset('./img/user/user-04.png') }}" alt="User" />
-                            <span
-                                class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"></span>
-                        </div>
 
-                        <div class="flex flex-1 items-center justify-between">
-                            <div>
-                                <h5 class="font-medium">Henry Fisher</h5>
-                                <p>
-                                    <span class="text-sm font-medium">I am waiting for you</span>
-                                    <span class="text-xs"> . 5:54 PM</span>
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-                        href="messages.html">
-                        <div class="relative h-14 w-14 rounded-full">
-                            <img src="{{ asset('./img/user/user-05.png') }}" alt="User" />
-                            <span
-                                class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-6"></span>
-                        </div>
+                        @foreach ($respondents as $respondent)
+                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
+                                <div class="flex items-center gap-3 p-2.5 xl:p-5">
+                                    <p class="hidden font-medium text-black dark:text-white sm:block">
+                                        {{ date('d F Y', strtotime($respondent->visited_at)) }}
+                                    </p>
+                                </div>
 
-                        <div class="flex flex-1 items-center justify-between">
-                            <div>
-                                <h5 class="font-medium">Wilium Smith</h5>
-                                <p>
-                                    <span class="text-sm font-medium">Where are you now?</span>
-                                    <span class="text-xs"> . 10:12 PM</span>
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-                        href="messages.html">
-                        <div class="relative h-14 w-14 rounded-full">
-                            <img src="{{ asset('./img/user/user-01.png') }}" alt="User" />
-                            <span
-                                class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"></span>
-                        </div>
+                                <div class="flex items-center justify-center p-2.5 xl:p-5">
+                                    <p class="font-medium text-black dark:text-white">
+                                        {{ $respondent->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}
+                                    </p>
+                                </div>
 
-                        <div class="flex flex-1 items-center justify-between">
-                            <div>
-                                <h5 class="font-medium text-black dark:text-white">
-                                    Henry Deco
-                                </h5>
-                                <p>
-                                    <span class="text-sm font-medium text-black dark:text-white">Thank you
-                                        so much!</span>
-                                    <span class="text-xs"> . Sun</span>
-                                </p>
-                            </div>
-                            <div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
-                                <span class="text-sm font-medium text-white">2</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-                        href="messages.html">
-                        <div class="relative h-14 w-14 rounded-full">
-                            <img src="{{ asset('./img/user/user-02.png') }}" alt="User" />
-                            <span
-                                class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-7"></span>
-                        </div>
+                                <div class="flex items-center justify-center p-2.5 xl:p-5">
+                                    <p class="font-medium text-black dark:text-white">
+                                        {{ $respondent->age }}
+                                    </p>
+                                </div>
 
-                        <div class="flex flex-1 items-center justify-between">
-                            <div>
-                                <h5 class="font-medium">Jubin Jack</h5>
-                                <p>
-                                    <span class="text-sm font-medium">I really love that!</span>
-                                    <span class="text-xs"> . Oct 23</span>
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-                        href="messages.html">
-                        <div class="relative h-14 w-14 rounded-full">
-                            <img src="{{ asset('./img/user/user-05.png') }}" alt="User" />
-                            <span
-                                class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-6"></span>
-                        </div>
+                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                                    <p class="font-medium text-black dark:text-white">
+                                        {{ $respondent->cafe }}
+                                    </p>
+                                </div>
 
-                        <div class="flex flex-1 items-center justify-between">
-                            <div>
-                                <h5 class="font-medium">Wilium Smith</h5>
-                                <p>
-                                    <span class="text-sm font-medium">Where are you now?</span>
-                                    <span class="text-xs"> . Sep 20</span>
-                                </p>
+                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                                    <a class="font-medium text-red-400 underline hover:no-underline"
+                                        href="#">Hapus</a>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-            <!-- ====== Chat Card End -->
+            <!-- ====== Table One End -->
         </div>
     </div>
 
