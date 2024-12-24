@@ -59,12 +59,7 @@
                         <li><a href="#coffee">Coffee</a></li>
                         <li><a href="#review">Review</a></li>
                         <li><a href="#blog">Blog</a></li>
-                        <li class="menu-has-children"><a href="">Pages</a>
-                            <ul>
-                                <li><a href="generic.html">Generic</a></li>
-                                <li><a href="elements.html">Elements</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>

@@ -307,45 +307,21 @@
             <div class="row d-flex justify-content-center">
                 <div class="menu-content col-lg-10 pb-60">
                     <div class="title text-center">
-                        <h1 class="mb-10">What kind of Coffee we serve for you</h1>
-                        <p>Who are in extremely love with eco friendly system.</p>
+                        <h1 class="mb-10">Jenis Kopi Apa yang Kami Sajikan Untuk Anda</h1>
+                        <p>Bantu kami menciptakan pengalaman terbaik dengan mengisi kuesioner ini!</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-6 single-blog">
                     <img class="img-fluid" src="{{ asset('img/b1.jpg') }}" alt="">
                     <ul class="post-tags">
-                        <li><a href="#">Travel</a></li>
-                        <li><a href="#">Life Style</a></li>
+                        <li style="padding: 8px 26px;">
+                            <a href="{{ route('questioner.index') }}">
+                                <span style="font-size: 20px;">Isi Kuesioner</span>
+                            </a>
+                        </li>
                     </ul>
-                    <a href="#">
-                        <h4>Portable latest Fashion for young women</h4>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore.
-                    </p>
-                    <p class="post-date">
-                        31st January, 2018
-                    </p>
-                </div>
-                <div class="col-lg-6 col-md-6 single-blog">
-                    <img class="img-fluid" src="{{ asset('img/b2.jpg') }}" alt="">
-                    <ul class="post-tags">
-                        <li><a href="#">Travel</a></li>
-                        <li><a href="#">Life Style</a></li>
-                    </ul>
-                    <a href="#">
-                        <h4>Portable latest Fashion for young women</h4>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore.
-                    </p>
-                    <p class="post-date">
-                        31st January, 2018
-                    </p>
                 </div>
             </div>
         </div>
@@ -389,8 +365,8 @@
                                 <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right"
                                         aria-hidden="true"></i></button>
                                 <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" type="text"
-                                        value="" tabindex="-1">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" type="text" value=""
+                                        tabindex="-1">
                                 </div>
 
                                 <div class="info pt-20"></div>
@@ -413,5 +389,5 @@
             </div>
         </div>
     </footer>
-    <!-- End footer Area -->    
+    <!-- End footer Area -->
 @endsection
