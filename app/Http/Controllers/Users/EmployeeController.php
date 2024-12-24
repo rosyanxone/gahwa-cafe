@@ -60,6 +60,8 @@ class EmployeeController extends Controller
             'password' => Hash::make($request->password),
         ])->assignRole('employee');
 
+        session()->flash('success', 'Karyawan berhasil dibuat.');
+
         return redirect()->route('employee.index');
     }
 
@@ -108,7 +110,21 @@ class EmployeeController extends Controller
             'address' => $request->address,
         ]);
 
-        return redirect()->route('employee.edit', ['user' => $user->id]);
+        if ($request->password) {
+            if ($request->password != $request->password_confirmation) {
+                session()->flash('failed', 'Password tidak sesuai.');
+
+                return redirect()->route('employee.edit', ['user' => $user->id]);
+            }
+
+            $user->update([
+                'password' => Hash::make($request->password),
+            ]);
+        }
+
+        session()->flash('success', 'Karyawan berhasil diperbarui.');
+
+        return redirect()->route('employee.index');
     }
 
     /**
@@ -117,6 +133,8 @@ class EmployeeController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+
+        session()->flash('success', 'Karyawan berhasil dihapus.');
 
         return redirect()->route('employee.index');
     }

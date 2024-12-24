@@ -190,4 +190,6 @@
         </div>
         <!-- Create Form End -->
     </div>
+
+    @include('partials.popup-failed')
 </x-admin-layout>

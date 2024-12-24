@@ -56,6 +56,8 @@ class QuestionController extends Controller
             }
         }
 
+        session()->flash('success', 'Pertanyaan baru berhasil dibuat.');
+
         return redirect()->route('question.create');
     }
 
@@ -122,6 +124,8 @@ class QuestionController extends Controller
                 'order' => $i + 1,
             ]);
         }
+
+        session()->flash('success', 'Pertanyaan berhasil dihapus.');
 
         return redirect()->route('question.index');
     }

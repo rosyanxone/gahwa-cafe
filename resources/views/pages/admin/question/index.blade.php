@@ -59,6 +59,7 @@
         <!-- ====== Table Section End -->
     </div>
 
+    @include('partials.popup-success')
     @push('scripts')
         <script>
             new DataTable('#questions', {

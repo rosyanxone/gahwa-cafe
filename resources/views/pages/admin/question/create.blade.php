@@ -154,6 +154,7 @@
         <!-- Create Form End -->
     </div>
 
+    @include('partials.popup-success')
     @push('scripts')
         <script>
             let questionsTotal = {{ $questionsTotal }};

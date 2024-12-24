@@ -12,7 +12,9 @@ import chart02 from "./../../public/js/components/chart-02";
 import chart03 from "./../../public/js/components/chart-03";
 import chart04 from "./../../public/js/components/chart-04";
 import chartLikert from "./../../public/js/components/chart-likert";
+import Swal from "sweetalert2";
 
+window.Swal = Swal;
 Alpine.plugin(persist);
 window.Alpine = Alpine;
 Alpine.start();
