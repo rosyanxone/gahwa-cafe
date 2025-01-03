@@ -22,6 +22,16 @@
         CSS
         ============================================= -->
     @yield('stylesheets')
+
+    <style>
+        .socmed-icon {
+            fill: #cccccc;
+        }
+
+        .socmed-icon:hover {
+            fill: #b68834;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,13 +43,10 @@
                     <div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
                         <ul>
                             <li>
-                                Mon-Fri: 8am to 2pm
+                                Setiap hari: 10:00-22:00
                             </li>
                             <li>
-                                Sat-Sun: 11am to 4pm
-                            </li>
-                            <li>
-                                <a href="tel:(012) 6985 236 7512">(012) 6985 236 7512</a>
+                                <a href="https://wa.me/+6281231260035">(+62) 812 3126 0035</a>
                             </li>
                         </ul>
                     </div>
@@ -49,16 +56,20 @@
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" title=""
-                            alt="" /></a>
+                    <a href="{{ route('home') }}" style="display: flex; align-items: center;">
+                        <img src="{{ asset('img/logo/logo.jpg') }}" title="" alt="logo" style="width: 40px; border-radius: 100%;" />
+                        <span style="padding-left: 12px; color: white; font-size: 20px; font-weight: 500;">
+                            Gahwa Coffe
+                        </span>
+                    </a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#coffee">Coffee</a></li>
-                        <li><a href="#review">Review</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#coffee">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#review">Testimoni</a></li>
+                        <li><a href="#blog">Review</a></li>
                         <li><a href="{{ route('login') }}">Login</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->

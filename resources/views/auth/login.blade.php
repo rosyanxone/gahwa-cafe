@@ -18,13 +18,11 @@
                 <div class="hidden w-full lg:block lg:w-1/2">
                     <div class="px-26 py-17.5 text-center">
                         <a class="mb-5.5 inline-block" href="{{ route('home') }}">
-                            <img class="hidden dark:block" src="src/images/logo/logo.svg" alt="Logo">
-                            <img class="dark:hidden" src="src/images/logo/logo-dark.svg" alt="Logo">
+                            <img class="block w-20 rounded-full" src="{{ asset('img/logo/logo.jpg') }}" alt="Logo">
                         </a>
 
-                        <p class="font-medium 2xl:px-20">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            suspendisse.
+                        <p class="text-xl font-medium">
+                            Gahwa Coffe Dashboard
                         </p>
 
                         <span class="mt-15 inline-block">
