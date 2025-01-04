@@ -43,10 +43,22 @@
                             </div>
                             <div class="mb-5">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $finalScore }}</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ round($finalScore, 2) }}</h1>
                                     <div class="w-full text-center">
                                         <hr class="mb-3 h-0.5 bg-black-2">
-                                        <span class="text-xl text-black-2 dark:text-white">B (Baik)</span>
+                                        <span class="text-xl text-black-2 dark:text-white">
+                                            @if ($finalScore < 21)
+                                                (E) Sangat Tidak Layak
+                                            @elseif ($finalScore >= 21 && $finalScore <= 40)
+                                                (D) Tidak Layak 
+                                            @elseif ($finalScore >= 41 && $finalScore <= 60)
+                                                (C) Cukup
+                                            @elseif ($finalScore >= 61 && $finalScore <= 81)
+                                                (B) Baik
+                                            @elseif ($finalScore >= 81 && $finalScore <= 100)
+                                                (A) Sangat Baik
+                                            @endif
+                                        </span>
                                     </div>
                                 </div>
                             </div>

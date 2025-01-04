@@ -120,7 +120,7 @@
                             <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-7">
                                 <div class="flex items-center justify-center p-2.5 xl:p-5">
                                     <p class="font-medium text-black dark:text-white">
-                                        {{ Str::limit($respondent->name, 5, '***') }}
+                                        {{ Str::limit($respondent->name, 3, '***') }}
                                     </p>
                                 </div>
 
@@ -130,7 +130,7 @@
                                     </p>
                                 </div>
 
-                                <div class="hidden items-center gap-3 p-2.5 sm:flex xl:p-5">
+                                <div class="hidden items-center justify-center gap-3 p-2.5 sm:flex xl:p-5">
                                     <p class="font-medium text-black dark:text-white sm:block">
                                         {{ date('d F Y', strtotime($respondent->visited_at)) }}
                                     </p>
@@ -156,7 +156,7 @@
 
                                 <div class="items-center justify-center p-2.5 sm:flex xl:p-5">
                                     <a class="font-medium text-red-400 underline hover:no-underline"
-                                        href="#">Hapus</a>
+                                        href="{{ route('respondent.destroy', ['respondent' => $respondent->id]) }}">Hapus</a>
                                 </div>
                             </div>
                         @endforeach

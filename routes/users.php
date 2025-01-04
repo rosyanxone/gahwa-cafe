@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(RespondentController::class)->name('respondent.')->prefix('respondent')->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/destroy/{respondent}', 'destroy')->name('destroy');
     });
 
     Route::middleware(['auth', 'role:admin'])->group(function () {

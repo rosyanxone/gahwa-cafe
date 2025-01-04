@@ -81,6 +81,8 @@ class RespondentController extends Controller
      */
     public function destroy(Respondent $respondent)
     {
-        //
+        $respondent->delete();
+
+        return view('pages.admin.dashboard');
     }
 }
