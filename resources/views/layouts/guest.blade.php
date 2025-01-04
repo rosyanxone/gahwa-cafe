@@ -32,11 +32,12 @@
             fill: #b68834;
         }
     </style>
+    @vite(['resources/js/sweet-alert.js'])
 </head>
 
 <body>
     <!-- Header -->
-    <header id="header" id="home" class="@yield('isHeaderScrolled')">
+    <header class="@yield('isHeaderScrolled')" id="header" id="home">
         <div class="header-top">
             <div class="container">
                 <div class="row justify-content-end">
@@ -57,7 +58,8 @@
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
                     <a href="{{ route('home') }}" style="display: flex; align-items: center;">
-                        <img src="{{ asset('img/logo/logo.jpg') }}" title="" alt="logo" style="width: 40px; border-radius: 100%;" />
+                        <img src="{{ asset('img/logo/logo.jpg') }}" title="" alt="logo"
+                            style="width: 40px; border-radius: 100%;" />
                         <span style="padding-left: 12px; color: white; font-size: 20px; font-weight: 500;">
                             Gahwa Coffe
                         </span>
@@ -65,12 +67,13 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="#home">Home</a></li>
-                        <li><a href="#coffee">Menu</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#review">Testimoni</a></li>
-                        <li><a href="#blog">Review</a></li>
-                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li class="menu-active"><a href="#home" style="color: white; text-decoration: none;">Home</a>
+                        </li>
+                        <li><a href="#coffee" style="color: white; text-decoration: none;">Menu</a></li>
+                        <li><a href="#gallery" style="color: white; text-decoration: none;">Gallery</a></li>
+                        <li><a href="#review" style="color: white; text-decoration: none;">Testimoni</a></li>
+                        <li><a href="#blog" style="color: white; text-decoration: none;">Review</a></li>
+                        <li><a href="{{ route('login') }}" style="color: white; text-decoration: none;">Login</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>

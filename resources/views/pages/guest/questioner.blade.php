@@ -12,7 +12,7 @@
 @endsection
 
 @section('main')
-    <div class="h-15 w-full lg:h-20" style="background: url('{{ asset('img/header-bg.jpg') }}')"></div>
+    <div class="h-16 w-full lg:h-22" style="background: url('{{ asset('img/header-bg.jpg') }}')"></div>
     <form class="flex-col bg-white px-2 pb-4 lg:mx-auto lg:flex lg:max-w-[1024px]" action="{{ route('questioner.store') }}"
         method="POST">
         @csrf
@@ -20,6 +20,16 @@
         <div class="">
             <h1 class="w-fit translate-x-2 translate-y-3 bg-white px-1 text-xl font-medium">Data Pelanggan</h1>
             <div class="flex w-full flex-col gap-2 rounded-lg border !border-slate-400 p-2.5 pt-3 text-sm">
+                <label class="flex flex-col" for="name">
+                    <span class="font-medium">Nama</span>
+                    <input class="mt-1 rounded-md border border-slate-100 p-2" id="name" name="name" type="text"
+                        placeholder="Masukkan nama Anda" required>
+                </label>
+                <label class="flex flex-col" for="email">
+                    <span class="font-medium">Email</span>
+                    <input class="mt-1 rounded-md border border-slate-100 p-2" id="email" name="email" type="text"
+                        placeholder="Masukkan email Anda" required>
+                </label>
                 <div for="gender">
                     <span class="font-medium">Jenis Kelamin</span>
                     <div class="mt-1">
@@ -39,7 +49,7 @@
                         name="cafe" required>
                         <option value="" selected disabled>Pilih Cafe yang Anda kunjungi</option>
                         <option value="Gahwa Waru">Gahwa Waru</option>
-                        <option value="Gahwa Lorem">Gahwa Lorem</option>
+                        <option value="Gahwa Silkar">Gahwa Silkar</option>
                     </select>
                 </label>
                 <label class="flex flex-col" for="age">

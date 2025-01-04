@@ -21,6 +21,8 @@ class QuestionerController extends Controller
     public function store(Request $request)
     {
         $respondent = Respondent::create([
+            'name' => $request->name,
+            'email' => $request->email,
             'age' => $request->age,
             'gender' => $request->gender,
             'cafe' => $request->cafe,
@@ -36,6 +38,8 @@ class QuestionerController extends Controller
                 'body' => $request->get('answer-' . $i + 1),
             ]);
         }
+
+        session()->flash('success', 'Kuesioner berhasil dikirim.');
 
         return redirect()->route('home');
     }

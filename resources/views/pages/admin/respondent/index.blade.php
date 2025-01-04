@@ -43,7 +43,7 @@
                             </div>
                             <div class="mb-5">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">76.50</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $finalScore }}</h1>
                                     <div class="w-full text-center">
                                         <hr class="mb-3 h-0.5 bg-black-2">
                                         <span class="text-xl text-black-2 dark:text-white">B (Baik)</span>
@@ -63,7 +63,7 @@
                             </div>
                             <div class="mt-8">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">64 orang</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $totalRespondent }} orang</h1>
                                     <hr class="mb-10 h-0.5 w-full bg-black-2">
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="mt-8">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">42 orang</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $maleRespondent }} orang</h1>
                                     <hr class="mb-10 h-0.5 w-full bg-black-2">
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="mt-8">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">22 orang</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $femaleRespondent }} orang</h1>
                                     <hr class="mb-10 h-0.5 w-full bg-black-2">
                                 </div>
                             </div>

@@ -214,7 +214,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 single-review">
+                @foreach ($randomEssayAnswers as $randomEssayAnswer)
+                    <div class="col-lg-6 col-md-6 single-review">
+                        <div class="title d-flex flex-row">
+                            <h4>{{ $randomEssayAnswer->respondent->name }}</h4>
+                        </div>
+                        <p>
+                            {{ $randomEssayAnswer->body }}
+                        </p>
+                    </div>
+                @endforeach
+                {{-- <div class="col-lg-6 col-md-6 single-review">
                     <div class="title d-flex flex-row">
                         <h4>lorem ipusm</h4>
                     </div>
@@ -223,22 +233,12 @@
                         scanner, speaker. Here you can find the best computer accessory for your laptop, monitor,
                         printer, scanner, speaker.
                     </p>
-                </div>
-                <div class="col-lg-6 col-md-6 single-review">
-                    <div class="title d-flex flex-row">
-                        <h4>lorem ipusm</h4>
-                    </div>
-                    <p>
-                        Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
-                        scanner, speaker. Here you can find the best computer accessory for your laptop, monitor,
-                        printer, scanner, speaker.
-                    </p>
-                </div>
+                </div> --}}
             </div>
             <div class="row counter-row">
                 <div class="col-lg-3 col-md-6 single-counter">
-                    <h1 class="counter">2536</h1>
-                    <p>Happy Client</p>
+                    <h1 class="counter">{{ $totalRespondent }}</h1>
+                    <p>Happy Customer</p>
                 </div>
             </div>
         </div>
@@ -339,4 +339,6 @@
         </div>
     </footer>
     <!-- End footer Area -->
+
+    @include('partials.popup-success')
 @endsection

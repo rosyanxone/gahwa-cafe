@@ -39,12 +39,19 @@
 
                         <form action="{{ route('login.store') }}" method="POST">
                             @csrf
+                            @if ($errors->any())
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li class="text-danger">{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
                             <div class="mb-4">
                                 <label class="mb-2.5 block font-medium text-black dark:text-white">Email</label>
                                 <div class="relative">
                                     <input
                                         class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                        name="email" type="email" placeholder="johndoe@gmail.com">
+                                        name="email" type="text" placeholder="johndoe@gmail.com">
 
                                     <span class="absolute right-4 top-4">
                                         <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"

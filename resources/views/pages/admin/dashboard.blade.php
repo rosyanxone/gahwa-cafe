@@ -92,51 +92,69 @@
                     </h4>
 
                     <div class="flex flex-col">
-                        <div class="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
-                            <div class="p-2.5 xl:p-5">
-                                <h5 class="text-sm font-medium uppercase xsm:text-base">Berkunjung Pada</h5>
-                            </div>
+                        <div class="grid w-full grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-7">
                             <div class="p-2.5 text-center xl:p-5">
-                                <h5 class="text-sm font-medium uppercase xsm:text-base">Jenis Kelamin</h5>
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Nama</h5>
                             </div>
-                            <div class="p-2.5 text-center xl:p-5">
+                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Email</h5>
+                            </div>
+                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Berkunjung</h5>
+                            </div>
+                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Gender</h5>
+                            </div>
+                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Umur</h5>
                             </div>
-                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                            <div class="p-2.5 text-center sm:block xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Cafe</h5>
                             </div>
-                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
+                            <div class="p-2.5 text-center sm:block xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Aksi</h5>
                             </div>
                         </div>
 
                         @foreach ($respondents as $respondent)
-                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
-                                <div class="flex items-center gap-3 p-2.5 xl:p-5">
-                                    <p class="hidden font-medium text-black dark:text-white sm:block">
+                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-7">
+                                <div class="flex items-center justify-center p-2.5 xl:p-5">
+                                    <p class="font-medium text-black dark:text-white">
+                                        {{ Str::limit($respondent->name, 5, '***') }}
+                                    </p>
+                                </div>
+
+                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                                    <p class="font-medium text-black dark:text-white">
+                                        {{ Str::limit($respondent->email, 5, '***') }}
+                                    </p>
+                                </div>
+
+                                <div class="hidden items-center gap-3 p-2.5 sm:flex xl:p-5">
+                                    <p class="font-medium text-black dark:text-white sm:block">
                                         {{ date('d F Y', strtotime($respondent->visited_at)) }}
                                     </p>
                                 </div>
 
-                                <div class="flex items-center justify-center p-2.5 xl:p-5">
+                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
                                     <p class="font-medium text-black dark:text-white">
-                                        {{ $respondent->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}
+                                        {{ $respondent->gender }}
                                     </p>
                                 </div>
 
-                                <div class="flex items-center justify-center p-2.5 xl:p-5">
+                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
                                     <p class="font-medium text-black dark:text-white">
                                         {{ $respondent->age }}
                                     </p>
                                 </div>
 
-                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                                <div class="items-center justify-center p-2.5 sm:flex xl:p-5">
                                     <p class="font-medium text-black dark:text-white">
                                         {{ $respondent->cafe }}
                                     </p>
                                 </div>
 
-                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
+                                <div class="items-center justify-center p-2.5 sm:flex xl:p-5">
                                     <a class="font-medium text-red-400 underline hover:no-underline"
                                         href="#">Hapus</a>
                                 </div>
