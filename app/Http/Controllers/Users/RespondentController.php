@@ -20,16 +20,18 @@ class RespondentController extends Controller
             ->with('answer')
             ->get();
 
-        $sumRespondentValue = Respondent::all()->sum('respondent_value'); // jumlahkan hasil dari keseluruhan nilai jawaban responden
-        $totalRespondent = Respondent::all()->count(); // dapatkan jumlah responden
-        $finalScore = $sumRespondentValue / $totalRespondent; // dapatkan nilai akhir dari hasil bagi variable di atas
+        $totalRespondent = Respondent::all()->count();
+
+        // No. 4 & 5
+        // nilai indeks dikali 20. untuk hasil akhir.
+        $hasilAkhir = Question::all()->sum('average_bobot') * 20;
 
         $maleRespondent = Respondent::where('gender', 'L')->count();
         $femaleRespondent = Respondent::where('gender', 'P')->count();
 
         return view('pages.admin.respondent.index', [
             'questions' => $questions,
-            'finalScore' => $finalScore,
+            'finalScore' => $hasilAkhir,
             'totalRespondent' => $totalRespondent,
             'maleRespondent' => $maleRespondent,
             'femaleRespondent' => $femaleRespondent,

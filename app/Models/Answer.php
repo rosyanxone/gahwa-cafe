@@ -12,12 +12,13 @@ class Answer extends Model
     use HasFactory;
 
     protected $guarded = [];
-    protected $appends = ['multipled_skor'];
+    // protected $appends = ['multipled_skor'];
 
-    public function getMultipledSkorAttribute()
-    {
-        return intval($this->body) ? $this->body * 20 : null; // dapatkan nilai skor dan kalikan dengan 20
-    }
+    // public function getMultipledSkorAttribute()
+    // {
+    //     // dapatkan nilai skor dan kalikan dengan 20
+    //     return intval($this->body) ? $this->body * 20 : null;
+    // }
 
     public function question(): BelongsTo
     {

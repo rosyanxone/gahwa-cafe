@@ -11,13 +11,13 @@ class Respondent extends Model
     use HasFactory;
 
     protected $guarded = [];
-    protected $appends = ['respondent_value'];
+    // protected $appends = ['respondent_value'];
 
-    public function getRespondentValueAttribute()
-    {
-        // jumlahkan hasil dari perkalian skor dan bagi dengan total pertanyaan likert
-        return $this->answer->sum('multipled_skor') / Question::where('type', 'likert')->count();
-    }
+    // public function getRespondentValueAttribute()
+    // {
+    //     // jumlahkan hasil dari perkalian skor dan bagi dengan total pertanyaan likert
+    //     return $this->answer->sum('multipled_skor') / Question::where('type', 'likert')->count();
+    // }
 
     public function answer()
     {
