@@ -32,7 +32,8 @@
             fill: #b68834;
         }
     </style>
-    @vite(['resources/js/sweet-alert.js'])
+    {{-- @vite(['resources/js/sweet-alert.js']) --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
