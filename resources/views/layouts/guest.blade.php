@@ -72,7 +72,7 @@
                         </li>
                         <li><a href="#coffee" style="color: white; text-decoration: none;">Menu</a></li>
                         <li><a href="#gallery" style="color: white; text-decoration: none;">Gallery</a></li>
-                        <li><a href="#review" style="color: white; text-decoration: none;">Testimoni</a></li>
+                        <li><a href="#review" style="color: white; text-decoration: none;">Testimony</a></li>
                         <li><a href="#blog" style="color: white; text-decoration: none;">Review</a></li>
                         <li><a href="{{ route('login') }}" style="color: white; text-decoration: none;">Login</a></li>
                     </ul>
