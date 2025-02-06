@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row fullscreen d-flex align-items-center justify-content-start">
                 <div class="banner-content col-lg-7">
-                    <h6 class="text-uppercase text-white">Now you can feel the Energy</h6>
+                    <h6 class="text-uppercase text-white" style="translate: 0 10px;">Now you can feel the Energy</h6>
                     <h1>
                         Start your day with <br>
                         Gahwa Coffee
