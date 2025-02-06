@@ -178,7 +178,7 @@
                         <img class="img-fluid" src="{{ asset('img/gallery/img-1.jpg') }}" alt="">
                     </a>
                     <a class="img-pop-home" href="{{ asset('img/gallery/img-2.jpg') }}">
-                        <img class="img-fluid" src="{{ asset('img/gallery/img-2.jpg') }}" alt="">
+                        <img class="img-fluid" style="margin-top: 5px;" src="{{ asset('img/gallery/img-2.jpg') }}" alt="">
                     </a>
                 </div>
                 <div class="col-lg-8">
