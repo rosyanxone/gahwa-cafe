@@ -16,6 +16,7 @@
     <meta charset="UTF-8">
     <!-- Site Title -->
     <title>Gahwa Coffee</title>
+    <link rel="icon" href="{{ asset('./img/logo/logo.jpg') }}" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--

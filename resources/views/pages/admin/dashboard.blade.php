@@ -167,6 +167,7 @@
         </div>
     </div>
 
+    @include('partials.popup-success')
     @push('scripts')
         <script src="{{ asset('js/main/spike-likert.js') }}"></script>
         <script>

@@ -85,6 +85,8 @@ class RespondentController extends Controller
     {
         $respondent->delete();
 
-        return view('pages.admin.dashboard');
+        session()->flash('success', 'Responden berhasil dihapus.');
+
+        return redirect()->route('dashboard');
     }
 }
