@@ -24,7 +24,7 @@ class RespondentController extends Controller
 
         // No. 4 & 5
         // nilai indeks dikali 20. untuk hasil akhir.
-        $hasilAkhir = Question::all()->sum('average_bobot') * 20;
+        $hasilAkhir = Question::where('type', 'likert')->get()->sum('average_bobot') * 20;
 
         $maleRespondent = Respondent::where('gender', 'L')->count();
         $femaleRespondent = Respondent::where('gender', 'P')->count();
