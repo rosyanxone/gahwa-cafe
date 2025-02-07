@@ -78,24 +78,24 @@
                                 placeholder="Berikan jawaban Anda..." required></textarea>
                         @else
                             <label class="m-0">
-                                <input name="answer-{{ $loop->iteration }}" type="radio" value="1" required>
-                                Sangat Tidak Setuju
+                                <input name="answer-{{ $loop->iteration }}" type="radio" value="5" required>
+                                Sangat Puas
                             </label>
                             <label class="m-0">
-                                <input name="answer-{{ $loop->iteration }}" type="radio" value="2" required>
-                                Tidak Setuju
+                                <input name="answer-{{ $loop->iteration }}" type="radio" value="4" required>
+                                Puas
                             </label>
                             <label class="m-0">
                                 <input name="answer-{{ $loop->iteration }}" type="radio" value="3" required>
                                 Netral
                             </label>
                             <label class="m-0">
-                                <input name="answer-{{ $loop->iteration }}" type="radio" value="4" required>
-                                Setuju
+                                <input name="answer-{{ $loop->iteration }}" type="radio" value="2" required>
+                                Tidak Puas
                             </label>
                             <label class="m-0">
-                                <input name="answer-{{ $loop->iteration }}" type="radio" value="5" required>
-                                Sangat Setuju
+                                <input name="answer-{{ $loop->iteration }}" type="radio" value="1" required>
+                                Sangat Tidak Puas
                             </label>
                         @endif
                     </label>

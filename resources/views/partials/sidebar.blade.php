@@ -3,7 +3,7 @@
     :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'" @click.outside="sidebarToggle = false">
     <!-- SIDEBAR HEADER -->
     <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:block lg:py-6.5">
-        <a class="text-4xl font-medium text-white" href="index.html">
+        <a class="text-4xl font-medium text-white" href="{{ route('dashboard') }}">
             Dashboard
         </a>
 
