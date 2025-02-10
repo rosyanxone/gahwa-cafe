@@ -120,7 +120,7 @@
                             <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-7">
                                 <div class="flex items-center justify-center p-2.5 xl:p-5">
                                     <p class="font-medium text-black dark:text-white">
-                                        {{ Str::limit($respondent->name, 3, '***') }}
+                                        {{ Str::limit($respondent->name, 2, '***') }}
                                     </p>
                                 </div>
 
