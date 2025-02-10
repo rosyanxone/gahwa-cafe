@@ -3,7 +3,7 @@
         <!-- Breadcrumb Start -->
         <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                Pertanyaan
+                Karyawan
             </h2>
 
             <nav>
@@ -11,7 +11,7 @@
                     <li>
                         <a class="font-medium" href="{{ route('dashboard') }}">Dashboard /</a>
                     </li>
-                    <li class="font-medium text-primary">Pertanyaan</li>
+                    <li class="font-medium text-primary">Karyawan</li>
                 </ol>
             </nav>
         </div>
@@ -23,7 +23,7 @@
                 class="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
                 <div class="mb-6 flex items-center justify-between">
                     <h4 class="text-xl font-bold text-black dark:text-white">
-                        Tabel Pertanyaan
+                        Tabel karyawan
                     </h4>
                     <a class="inline-flex items-center justify-center rounded-md bg-primary p-2 text-center text-sm font-medium text-white hover:bg-opacity-90 lg:p-4"
                         href="{{ route('employee.create') }}">

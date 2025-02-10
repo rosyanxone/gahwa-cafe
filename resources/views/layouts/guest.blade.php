@@ -46,7 +46,7 @@
                     <div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
                         <ul>
                             <li>
-                                Setiap hari: 10:00-22:00
+                                Setiap hari: 15:00-23:00
                             </li>
                             <li>
                                 <a href="https://wa.me/+6281231260035">(+62) 812 3126 0035</a>
@@ -63,7 +63,7 @@
                         <img src="{{ asset('img/logo/logo.jpg') }}" title="" alt="logo"
                             style="width: 40px; border-radius: 100%;" />
                         <span style="padding-left: 12px; color: white; font-size: 20px; font-weight: 500;">
-                            Gahwa Coffe
+                            Gahwa Story Coffee
                         </span>
                     </a>
                 </div>

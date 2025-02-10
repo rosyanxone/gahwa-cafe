@@ -38,7 +38,7 @@
                             class="col-span-3 flex h-64 flex-col justify-between rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
                             <div class="w-40 justify-between gap-4 sm:flex lg:w-auto">
                                 <h4 class="text-xl font-bold text-black dark:text-white">
-                                    Nilai IKM
+                                    Nilai IKP
                                 </h4>
                             </div>
                             <div class="mb-5">

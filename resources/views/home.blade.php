@@ -279,16 +279,15 @@
                     <div class="single-footer-widget">
                         <h6>About Us</h6>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore dolore magna aliqua.
+                            Gahwa Episode 1 | Jalan Bangun Mulyo, Waru, Kec. Waru, Kabupaten Penajam Paser Utara, Kalimantan Timur 76284
+                            Gahwa Episode 2 | Jalan Silkar, no. 77, Giri Mukti, Kec. Penajam, Kabupaten Penajam Paser Utara, Kalimantan Timur 76141
                         </p>
                         <p class="footer-text">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This site is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i>
+                            </script> All rights reserved | Gahwa Story Coffee</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
