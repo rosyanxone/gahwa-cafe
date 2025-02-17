@@ -31,7 +31,7 @@
                     </h4>
                 </div>
 
-                <div class="w-full mb-6 overflow-auto">
+                <div class="mb-6 w-full overflow-auto">
                     <!-- Card Item Start -->
                     <div class="flex w-full grid-cols-12 gap-3 lg:grid lg:gap-6">
                         <div
@@ -43,14 +43,15 @@
                             </div>
                             <div class="mb-5">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ round($finalScore, 2) }}</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">
+                                        {{ round($finalScore, 2) }}</h1>
                                     <div class="w-full text-center">
                                         <hr class="mb-3 h-0.5 bg-black-2">
                                         <span class="text-xl text-black-2 dark:text-white">
                                             @if ($finalScore < 21)
                                                 (E) Sangat Tidak Layak
                                             @elseif ($finalScore >= 21 && $finalScore <= 40)
-                                                (D) Tidak Layak 
+                                                (D) Tidak Layak
                                             @elseif ($finalScore >= 41 && $finalScore <= 60)
                                                 (C) Cukup
                                             @elseif ($finalScore >= 61 && $finalScore <= 81)
@@ -75,7 +76,8 @@
                             </div>
                             <div class="mt-8">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $totalRespondent }} orang</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $totalRespondent }}
+                                        orang</h1>
                                     <hr class="mb-10 h-0.5 w-full bg-black-2">
                                 </div>
                             </div>
@@ -93,7 +95,8 @@
                             </div>
                             <div class="mt-8">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $maleRespondent }} orang</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $maleRespondent }}
+                                        orang</h1>
                                     <hr class="mb-10 h-0.5 w-full bg-black-2">
                                 </div>
                             </div>
@@ -111,7 +114,8 @@
                             </div>
                             <div class="mt-8">
                                 <div class="flex flex-col items-center justify-center gap-5">
-                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">{{ $femaleRespondent }} orang</h1>
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">
+                                        {{ $femaleRespondent }} orang</h1>
                                     <hr class="mb-10 h-0.5 w-full bg-black-2">
                                 </div>
                             </div>
@@ -119,6 +123,34 @@
                         </div>
                         <!-- Card Item End -->
                     </div>
+                </div>
+
+                <div
+                    class="mb-6 grid max-h-[650px] grid-cols-2 overflow-y-auto border border-stroke bg-white dark:border-strokedark dark:bg-boxdark lg:grid-cols-12">
+                    @foreach ($respondentByAge as $i => $item)
+                        <div class="col-span-3 flex flex-col justify-between rounded-sm px-5 pb-5 pt-7.5 sm:px-7.5">
+                            <div class="mb-3 w-40 justify-between gap-4 sm:flex lg:w-auto">
+                                <h4 class="text-xl font-bold text-black dark:text-white">
+                                    @if ($i == 0)
+                                        Umur
+                                    @endif
+                                </h4>
+                            </div>
+                            <div class="mt-8">
+                                <div class="flex flex-col items-center justify-center gap-5">
+                                    <h1 class="text-4xl font-medium text-black-2 dark:text-white">
+                                        {{ $item->amount_respondents }} orang
+                                    </h1>
+                                    <div class="w-full text-center">
+                                        <hr class="mb-3 h-0.5 w-full bg-black-2">
+                                        <span class="text-xl text-black-2 dark:text-white">
+                                            Umur {{ $item->age }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
 
                 <ul class="flex flex-col gap-6">

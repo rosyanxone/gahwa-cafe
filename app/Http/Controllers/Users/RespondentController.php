@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Answer;
 use App\Models\Question;
 use App\Models\Respondent;
+use DB;
 use Illuminate\Http\Request;
 
 class RespondentController extends Controller
@@ -29,12 +30,18 @@ class RespondentController extends Controller
         $maleRespondent = Respondent::where('gender', 'L')->count();
         $femaleRespondent = Respondent::where('gender', 'P')->count();
 
+        $respondentByAge = Respondent::select('age', DB::raw('COUNT(*) as amount_respondents'))
+            ->groupBy('age')
+            ->orderBy('age')
+            ->get();
+
         return view('pages.admin.respondent.index', [
             'questions' => $questions,
             'finalScore' => $hasilAkhir,
             'totalRespondent' => $totalRespondent,
             'maleRespondent' => $maleRespondent,
             'femaleRespondent' => $femaleRespondent,
+            'respondentByAge' => $respondentByAge,
         ]);
     }
 
