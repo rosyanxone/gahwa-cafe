@@ -120,17 +120,17 @@
     "src": "public/fonts/Satoshi-Regular.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-Cn47Q437.css",
+    "file": "assets/app-CSgf1MlV.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-I0hyyNI9.js",
+    "file": "assets/app-CBNQEwkn.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-CbroUUDq.css"
+      "assets/app-CNlSB_k_.css"
     ],
     "assets": [
       "assets/Satoshi-Light-IqwJ_ZjS.woff2",
